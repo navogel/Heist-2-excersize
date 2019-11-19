@@ -64,6 +64,8 @@ namespace heist2
                 }
 
             }
+            Random random = new Random();
+            int luck = random.Next(-10, 10); 
 
             Console.WriteLine($"There are {Heisters.Count} people on your team");
             int teamSkill = 0;
@@ -74,6 +76,9 @@ namespace heist2
             }
 
             int bankDifficulty = 100;
+            bankDifficulty += luck;
+            Console.WriteLine($"Your teams total skill is {teamSkill}");
+            Console.WriteLine($"The bank difficultly when factoring in luck is: {bankDifficulty}");
             if (bankDifficulty > teamSkill)
             {
                 Console.WriteLine("so sorry, you no have success, enjoy spend life in jail.");
