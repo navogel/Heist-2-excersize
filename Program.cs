@@ -8,9 +8,22 @@ namespace heist2
         static void Main(string[] args)
         {
             int trialRuns;
+            int bankDifficulty;
             List<Heister> Heisters = new List<Heister>();
             Console.WriteLine("Plan your heist");
             Console.WriteLine();
+            Console.WriteLine("First of all, how hard is this bank gonna be??");
+            string bankDifficultyString = Console.ReadLine();
+            try
+            {
+                bankDifficulty = int.Parse(bankDifficultyString);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"{bankDifficultyString} is not a number, dum-dum.  You should rethink the bank robbing plan.  Bank difficulty will be 1 billion.");
+                bankDifficulty = 1000000000;
+
+            }
             while (true)
             {
                 Heister teamMember;
@@ -77,8 +90,8 @@ namespace heist2
                 }
 
             }
-            
-
+            int success = 0;
+            int failure = 0;
             Console.WriteLine($"There are {Heisters.Count} people on your team");
             int teamSkill = 0;
             foreach (var item in Heisters)
@@ -89,23 +102,25 @@ namespace heist2
             while (trialRuns > 0)
             {
                 Random random = new Random();
-                int luck = random.Next(-10, 10); 
-                int bankDifficulty = 100;
+                int luck = random.Next(-10, 10);
+
                 bankDifficulty += luck;
                 Console.WriteLine($"Your teams total skill is {teamSkill}");
                 Console.WriteLine($"The bank difficultly when factoring in luck is: {bankDifficulty}");
                 if (bankDifficulty > teamSkill)
                 {
                     Console.WriteLine("so sorry, you no have success, enjoy spend life in jail.");
-                } 
-                else 
+                    failure += 1;
+                }
+                else
                 {
                     Console.WriteLine("Oooo very good, you can beat this bank with no jail time");
+                    success += 1;
                 }
                 trialRuns -= 1;
             }
-            
 
+            Console.WriteLine($"In this test you had {success} successful bank robberies and {failure} failures");
 
         }
     }
