@@ -1,0 +1,11 @@
+C:\Nate2019\NSS\workspace\c#\heist2\bin\Debug\netcoreapp3.0\heist2.exe
+C:\Nate2019\NSS\workspace\c#\heist2\bin\Debug\netcoreapp3.0\heist2.deps.json
+C:\Nate2019\NSS\workspace\c#\heist2\bin\Debug\netcoreapp3.0\heist2.runtimeconfig.json
+C:\Nate2019\NSS\workspace\c#\heist2\bin\Debug\netcoreapp3.0\heist2.runtimeconfig.dev.json
+C:\Nate2019\NSS\workspace\c#\heist2\bin\Debug\netcoreapp3.0\heist2.dll
+C:\Nate2019\NSS\workspace\c#\heist2\bin\Debug\netcoreapp3.0\heist2.pdb
+C:\Nate2019\NSS\workspace\c#\heist2\obj\Debug\netcoreapp3.0\heist2.csprojAssemblyReference.cache
+C:\Nate2019\NSS\workspace\c#\heist2\obj\Debug\netcoreapp3.0\heist2.AssemblyInfoInputs.cache
+C:\Nate2019\NSS\workspace\c#\heist2\obj\Debug\netcoreapp3.0\heist2.AssemblyInfo.cs
+C:\Nate2019\NSS\workspace\c#\heist2\obj\Debug\netcoreapp3.0\heist2.dll
+C:\Nate2019\NSS\workspace\c#\heist2\obj\Debug\netcoreapp3.0\heist2.pdb
