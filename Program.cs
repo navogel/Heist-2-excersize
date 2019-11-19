@@ -7,6 +7,7 @@ namespace heist2
     {
         static void Main(string[] args)
         {
+            int trialRuns;
             List<Heister> Heisters = new List<Heister>();
             Console.WriteLine("Plan your heist");
             Console.WriteLine();
@@ -17,6 +18,18 @@ namespace heist2
                 string name = Console.ReadLine();
                 if (name == "")
                 {
+                    Console.WriteLine("ok, how many times do we run this test??");
+                    string trialRunsString = Console.ReadLine();
+                    try
+                    {
+                        trialRuns = int.Parse(trialRunsString);
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine($"{trialRunsString} is not a number, dum-dum.  You should rethink the bank robbing plan.  For now, you get one trial run.");
+                        trialRuns = 1;
+
+                    }
                     break;
                 }
                 else
@@ -64,8 +77,7 @@ namespace heist2
                 }
 
             }
-            Random random = new Random();
-            int luck = random.Next(-10, 10); 
+            
 
             Console.WriteLine($"There are {Heisters.Count} people on your team");
             int teamSkill = 0;
@@ -74,19 +86,25 @@ namespace heist2
                 Console.WriteLine($"Name:{item.Name} Skill Level: {item.SkillLevel} Courage Factor: {item.CourageFactor}");
                 teamSkill += item.SkillLevel;
             }
-
-            int bankDifficulty = 100;
-            bankDifficulty += luck;
-            Console.WriteLine($"Your teams total skill is {teamSkill}");
-            Console.WriteLine($"The bank difficultly when factoring in luck is: {bankDifficulty}");
-            if (bankDifficulty > teamSkill)
+            while (trialRuns > 0)
             {
-                Console.WriteLine("so sorry, you no have success, enjoy spend life in jail.");
-            } 
-            else 
-            {
-                Console.WriteLine("Oooo very good, you can beat this bank with no jail time");
+                Random random = new Random();
+                int luck = random.Next(-10, 10); 
+                int bankDifficulty = 100;
+                bankDifficulty += luck;
+                Console.WriteLine($"Your teams total skill is {teamSkill}");
+                Console.WriteLine($"The bank difficultly when factoring in luck is: {bankDifficulty}");
+                if (bankDifficulty > teamSkill)
+                {
+                    Console.WriteLine("so sorry, you no have success, enjoy spend life in jail.");
+                } 
+                else 
+                {
+                    Console.WriteLine("Oooo very good, you can beat this bank with no jail time");
+                }
+                trialRuns -= 1;
             }
+            
 
 
         }
