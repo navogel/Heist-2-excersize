@@ -66,10 +66,23 @@ namespace heist2
             }
 
             Console.WriteLine($"There are {Heisters.Count} people on your team");
+            int teamSkill = 0;
             foreach (var item in Heisters)
             {
                 Console.WriteLine($"Name:{item.Name} Skill Level: {item.SkillLevel} Courage Factor: {item.CourageFactor}");
+                teamSkill += item.SkillLevel;
             }
+
+            int bankDifficulty = 100;
+            if (bankDifficulty > teamSkill)
+            {
+                Console.WriteLine("so sorry, you no have success, enjoy spend life in jail.");
+            } 
+            else 
+            {
+                Console.WriteLine("Oooo very good, you can beat this bank with no jail time");
+            }
+
 
         }
     }
